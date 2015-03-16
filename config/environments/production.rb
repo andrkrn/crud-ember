@@ -75,4 +75,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   # config.active_record.dump_schema_after_migration = false
+
+  # Ember
+  config.ember.variant = :production
+  config.handlebars.templates_root = 'andrkrn/templates'
 end

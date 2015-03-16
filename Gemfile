@@ -3,26 +3,24 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'rails', '4.1.9'
+gem 'rails-api', '~> 0.2.0'
 
 # Database
-gem 'mongo_mapper'
-gem 'bson_ext'
-
-# Serializer
+gem "mongoid", "~> 4.0.0"
 gem 'active_model_serializers', '~> 0.8.1'
 
 # Assets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
-gem 'angularjs-rails', '~> 1.2.25'
-gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
+gem 'font-awesome-sass'
+gem 'ember-rails'
+gem 'ember-source', '~> 1.9.1'
 
 # View
-gem 'turbolinks'
+gem 'slim'
 
 # Upload
 gem 'carrierwave'
@@ -44,7 +42,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.1.0'
   gem 'guard-rspec'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -60,4 +58,9 @@ group :development do
   gem 'meta_request', '0.2.0'
   gem 'lol_dba'
   gem 'fake_sqs'
+end
+
+group :production do
+  gem 'execjs'
+  gem 'therubyracer', platforms: :ruby
 end

@@ -1,4 +1,17 @@
+require 'modules/restrict_format'
+require 'modules/api_constraints'
+
 Rails.application.routes.draw do
+  
+  namespace :api, defaults: {format: 'json'}, constraints: RestrictFormat.new(:json) do
+    namespace :v1 do
+      resources :articles
+    end
+  end
+
+  get '/*path', to: 'ember#index'
+  root to: 'ember#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
