@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
-
 gem 'rails', '4.1.9'
-gem 'rails-api', '~> 0.2.0'
+gem 'rails-api', '~> 0.4.0'
 
 # Database
 gem "mongoid", "~> 4.0.0"
@@ -23,29 +21,29 @@ gem 'ember-source', '~> 1.9.1'
 gem 'slim'
 
 # Upload
-gem 'carrierwave'
-gem 'cloudinary'
+# gem 'carrierwave'
+# gem 'cloudinary'
 
-gem 'puma'
+gem 'puma', :require => false
 
 # Test
 group :test do
   gem 'fabrication'
   gem 'faker'
   gem 'shoulda-matchers'
-  gem 'cucumber-rails', :require => false
+  # gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem 'email_spec'
+  # gem 'email_spec'
   # Pretty printed test output
-  gem 'turn', '~> 0.8.3', :require => false
+  # gem 'turn', '~> 0.8.3', :require => false
   gem "codeclimate-test-reporter", require: nil
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'guard-rspec'
-  gem 'capybara'
-  gem 'selenium-webdriver'
+  # gem 'capybara'
+  # gem 'selenium-webdriver'
 end
 
 group :development do
