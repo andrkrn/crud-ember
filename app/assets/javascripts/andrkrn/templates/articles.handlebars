@@ -1,1 +1,22 @@
-Oh WAW
+<div class="page-header">
+  <div class="container text-center">
+    <h1>Articles</h1>
+  </div>
+</div>
+
+<div class="container pt-20" style="min-height: 338px;">
+  <div class="col-md-3">
+    <ul class="nav nav-pills nav-stacked">
+      {{#link-to "articles.index" tagName="li"}}
+          <a {{bind-attr href="view.href"}}>All</a>
+      {{/link-to}}
+      {{#link-to "articles.new" tagName="li"}}
+          <a {{bind-attr href="view.href"}}>New</a>
+      {{/link-to}}
+    </ul>
+
+  </div>
+  <div class="col-md-9">
+    {{outlet "article"}}
+  </div>
+</div>

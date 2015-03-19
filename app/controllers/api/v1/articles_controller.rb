@@ -29,7 +29,7 @@ class Api::V1::ArticlesController < Api::V1::ApplicationController
 
   def destroy
     @article.destroy
-    head :ok
+    head 204
   end
 
   private

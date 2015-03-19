@@ -1,0 +1,19 @@
+<table class="table table-bordered table-hover">
+  <tr>
+    <th class="text-center" width="80px">#</th>
+    <th class="text-center">Title</th>
+    <th class="text-center" colspan="2">Action</th>
+  </tr>
+  {{#each article in filteredContent}}
+    <tr>
+      <td class="text-center">{{article.id}}</td>
+      <td>{{article.title}}</td>
+      <td class="text-center" width="100px">
+        {{#link-to 'articles.edit' article.id classNames="btn btn-default btn-xs"}}
+          <i class="fa fa-edit"></i> Edit
+        {{/link-to}}
+      </td>
+      <td class="text-center" width="50px"><a {{action 'deleteArticle' article}}><i class="fa fa-trash-o"></i></a></td>
+    </tr>
+  {{/each}}
+</table>

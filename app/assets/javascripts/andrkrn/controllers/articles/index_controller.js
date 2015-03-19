@@ -6,6 +6,13 @@ Luv.ArticlesIndexController = Ember.ArrayController.extend({
     return this.get('arrangedContent').filter(function(item, index) {
       return !(item.get('isDirty'));
     });
-  }.property('content.@each')
-  
+  }.property('content.@each'),
+
+  actions: {
+    deleteArticle: function(article) {
+      this.store.find('article', article.id).then(function (article) {
+        article.destroyRecord();
+      });
+    }
+  }
 });
